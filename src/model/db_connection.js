@@ -1,4 +1,3 @@
-require("dotenv").config();
 
 let DB_URL = process.env.DATABASE_URL;
 

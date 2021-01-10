@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const controllers = require("./controllers/router");
 
@@ -11,10 +12,8 @@ const favicon = require("serve-favicon");
 const app = express();
 
 // View Engine
-/*
-app.set("view engine", "YOUR ENGINE HERE");
+app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
-*/
 
 // Middlewares
 app.use(helmet());
