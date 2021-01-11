@@ -21,7 +21,7 @@ exports.doSpeedtest = (req, res) => {
         .then(() => {
           console.log(`${timestamp()}: ${s} Mbps`);
           return req && req.originalUrl === "/speedtest"
-            ? res.send(`${timestamp()}: ${s} Mbps`)
+            ? res.render("speedtest", { timestamp: timestamp(), speed: s })
             : null;
         })
         .catch((err) => {

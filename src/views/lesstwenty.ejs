@@ -1,0 +1,26 @@
+<%- include("_header") -%>
+    <div class="container">
+        <h1>Speedtests lower than 20 Mbps (<%= data.length %>)</h1>
+        <div class="table-responsive-sm">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Id</th>
+                <th>Timestamp</th>
+                <th>Speed</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (const test of data) { %>
+              <tr>
+                <td><%= test.id %></td>
+                <td><%= test.created_at %></td>
+                <td><%= test.speed %> Mbps</td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+</div>
+<%- include("_footer") -%>

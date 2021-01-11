@@ -5,17 +5,19 @@ const speedtest = require("./testSpeed");
 const getData = require("./getData")
 
 router.get("/", getData.getTests);
-router.get("/speedtest", speedtest.doSpeedtest)
+router.get("/speedtest", speedtest.doSpeedtest);
+router.get("/lessten", getData.lessTen);
+router.get("/lesstwenty", getData.lessTwenty);
 
 // Basic error handling - these can be updated to render views.
 router.use(function (error, req, res, next) {
   console.error(error);
   const status = error.status || 500;
-  res.status(status).send(`<h1>Something went wrong</h1>`);
+  res.status(status).render("error", { err: status })
 });
 
 router.use(function (req, res, next) {
-  res.status(404).send(`<h1>404: Page not found</h1>`);
+  res.status(404).render("error", { err: 404 });
 });
 
 module.exports = router;

@@ -21,3 +21,25 @@ exports.getTests = (req, res) => {
       console.error(err);
     });
 };
+
+exports.lessTen = (req, res) => {
+  db.any("select * from speedtests where speed < 10")
+  .then((data) => {
+    res.status(200);
+    res.render("lessten", { data: data });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+}
+
+exports.lessTwenty = (req, res) => {
+  db.any("select * from speedtests where speed < 20")
+  .then((data) => {
+    res.status(200);
+    res.render("lesstwenty", { data: data });
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+}
