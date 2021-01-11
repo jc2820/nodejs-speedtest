@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(controllers);
 
 // Schedule Speedtests.
-cron.schedule('5,10,15,20,25,30,35,40,45,50,55 * * * *', () => {
+cron.schedule('0,5,10,15,20,25,30,35,40,45,50,55 * * * *', () => {
     speedtest.doSpeedtest();
   });
 
