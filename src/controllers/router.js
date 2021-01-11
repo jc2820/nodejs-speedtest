@@ -1,9 +1,11 @@
 const express = require("express");
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send(`<h1>Hello world</h1>`);
-});
+const speedtest = require("./testSpeed");
+const getData = require("./getData")
+
+router.get("/", getData.getTests);
+router.get("/speedtest", speedtest.doSpeedtest)
 
 // Basic error handling - these can be updated to render views.
 router.use(function (error, req, res, next) {

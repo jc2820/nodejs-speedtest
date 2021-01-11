@@ -1,11 +1,10 @@
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS speedtests;
 
-CREATE TABLE users (
+CREATE TABLE speedtests (
     ID SERIAL PRIMARY KEY,
-    username VARCHAR,
-    email VARCHAR,
-    bio TEXT
+    created_at TIMESTAMP NOT NULL,
+    speed INTEGER
 );
 
-INSERT INTO users (username, email, bio)
-VALUES ('Name', 'email@server.com', 'Notes');
+INSERT INTO speedtests (created_at, speed)
+VALUES (current_timestamp, 34);

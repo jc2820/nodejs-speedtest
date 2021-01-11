@@ -1,7 +1,7 @@
 {
   "name": "src",
   "version": "1.0.0",
-  "description": "Express app/server template",
+  "description": "Speedtest server app",
   "main": "app.js",
   "scripts": {
     "start": "node src/server.js",
@@ -17,7 +17,9 @@
     "express": "^4.17.1",
     "fast-speedtest-api": "^0.3.2",
     "helmet": "^4.3.1",
-    "pg-promise": "^10.8.7"
+    "node-cron": "^2.0.3",
+    "pg-promise": "^10.8.7",
+    "serve-favicon": "^2.5.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
