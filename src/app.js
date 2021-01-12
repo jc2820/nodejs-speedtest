@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require("express");
-const controllers = require("./controllers/router");
+const router = require("./controllers/router");
 
 const cron = require("node-cron");
 const speedtest = require("./controllers/testSpeed")
@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 // Forwards requests to the router
-app.use(controllers);
+app.use(router);
 
 // Schedule Speedtests.
 cron.schedule('0,5,10,15,20,25,30,35,40,45,50,55 * * * *', () => {
