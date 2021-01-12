@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS speedtests;
 CREATE TABLE speedtests (
     ID SERIAL PRIMARY KEY,
     created_at TIMESTAMP NOT NULL,
-    speed INTEGER
+    speed FLOAT
 );
 
 INSERT INTO speedtests (created_at, speed)
